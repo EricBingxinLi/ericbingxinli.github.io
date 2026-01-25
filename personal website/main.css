@@ -1,0 +1,368 @@
+/* 1. import required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;700&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* 2. design tokens (colours, spacing scales) */
+:root {
+  --white: #f8f8f8;
+  --black: #080808;
+  --purple: #4b0082;
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 32px;
+  --space-lg: 48px;
+  --space-xl: 60px;
+
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-display: "Kalam", cursive;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.5;
+  min-width: 320px;
+}
+
+/* HEADINGS */
+.site-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size:160px;/*visit tokoyo*/
+}
+.section-heading,
+.attraction-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+ }
+.history h2 { color:black; font-size:100px; }
+.tagline,
+.summary-text,
+.history-card p {
+  font-family: var(--font-body);
+   font-size: clamp(24px, 2.2vw, 40px);
+  font-weight: 400;
+}
+.attraction-block p
+{ font-family: var(--font-body);
+  font-size:20px;
+  font-weight: 400;}
+
+/*.tagline:last-of-type {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 40px;
+}*/
+.tagline {
+  font-family: var(--font-body);
+  font-size: clamp(24px, 1.6vw, 400px);  
+  font-weight: 400;
+  line-height: 1.2;                     
+  max-width: 180ch;                      
+  margin-bottom: 10px;
+}
+
+/* “Let’s visit Tokyo.” */
+.tagline:last-of-type {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 5vw, 80px);
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 40px;
+  margin-left: 80px;          
+  text-align: left;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("images/header.jpg"); /* Tokyo header */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-md);
+  border-bottom: 60px solid var(--purple);
+}
+
+.hero-inner {
+  max-width: 800px;
+}
+
+.bg-credit {
+  position: absolute;
+  right: 8px;     
+  bottom: 8px;
+  font-size: 10px;
+  color: #888;
+}
+.bg-credit a {
+  color: #555;
+  text-decoration: none;
+}
+/* HISTORY */
+.history {
+  padding: var(--space-lg) var(--space-md);
+  border-top: var(--space-lg) solid var(--white);
+  background-image: url("images/history/edo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--white);
+  position:relative;
+}
+.history-card {
+  color: var(--black);
+  padding: var(--space-md);
+  max-width: none;
+  width:100%;
+  box-sizing:border-box; 
+}
+
+/* ATTRACTIONS wrapper */
+.attractions {
+    padding: var(--space-lg) var(--space-md);
+}
+.attractions h2{
+    color: white;
+    background-color: var(--purple);
+    padding: 10px 0; 
+    margin-bottom: var(--space-md);  
+   text-align: center; 
+  }
+
+.attraction-block {
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  background-color: var(--white);
+  color: var(--black);
+}
+.attraction-block + .attraction-block {
+  border-top: var(--space-lg) solid var(--purple);
+}
+/* title spacing etc */
+.attraction-title {
+  font-weight: 700;
+  font-size: 100px;
+  color:black;
+  margin-bottom: var(--space-sm);
+}
+
+/* image row */
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;            /* at least 20px between blocks */
+  margin-top: 40px;
+  margin-left: 40px;    /* indent images same as text */
+}
+
+.img-card {
+  width: 320px;
+  height: 320px;
+  border: 5px solid var(--purple);   /* 5px border */
+  background-color: transparent;
+  color: var(--white);
+  font-size: 10px;
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-card figcaption {
+  padding: 4px;
+  color: var(--white);
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 2px,4px;
+}
+
+.img-card figcaption a {
+  color: #ddd;          /* link color #ccc */
+  text-decoration: none;
+}
+.attraction-toyosu {
+  background-image: url("images/toyosu/toyosu-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position:relative;
+}
+
+.attraction-sumo {
+  background-image: url("images/sumo/sumo-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position:relative;
+}
+
+.attraction-shibuya {
+  background-image: url("images/shibuya/shibuya-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position:relative;
+}
+
+.attraction-block .bg-credit--block {
+  display: block;
+  font-size: 10px;
+  color: var(--white);
+  margin-top: var(--space-sm);
+  text-align: right; 
+  position: static; 
+}
+
+.attraction-block .bg-credit--block a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+/* SUMMARY */
+.summary {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  background-color: var(--purple);
+}
+.summary-text {
+  color:white;
+ /* max-width: 80ch;*/
+  margin: 0 auto;
+}
+.summary-text .line1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+.summary-text .line2 {
+  font-size: 80px;
+  font-family: var(--font-display); 
+  font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: var(--space-md);
+  font-size: 20px;
+  font:white;
+  text-align: center;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;               
+  justify-content: center;     
+  flex-wrap: wrap;             
+  gap: 40px; 
+}
+footer li {
+  display: inline;
+}
+
+footer a {
+  color: white;                
+  text-decoration: underline;  
+  font-size: 20px;
+}
+
+footer a:hover {
+  color: #ccc;                
+}
+
+/* RESPONSIVE TYPE & SPACING ---------------------------------- */
+/* mobile-first sizes for ~400px spec (from brief: 128px title, etc.) */
+.site-title {
+  font-size: 8rem;   /* ~128px */
+  line-height: 0.9;
+}
+.tagline {
+  font-size: 1.5rem; /* ~24px */
+  font-weight: 300;
+  font-family: var(--font-display);
+}
+
+/* section headings ("History", "Attractions", etc.) */
+.section-heading {
+  font-size: 4rem; /* ~64px at 400px spec */
+  margin-bottom: var(--space-md);
+}
+.attraction-title {
+  font-size: 2.5rem; /* ~40px at 400px spec */
+  margin-bottom: var(--space-sm);
+}
+.summary-heading {
+  font-size: 2.5rem; /* ~40px at 400px spec */
+  margin-bottom: var(--space-md);
+}
+
+/* Up-scale for large viewports ~1440px spec */
+@media (min-width: 1024px) {
+  .site-title { font-size: 10rem; } /* ~160px */
+  .tagline { font-size: 2.5rem; }   /* ~40px */  
+  .section-heading { font-size: 6rem; } /* ~100px */
+  .history-card {
+    border-width: var(--space-xl); /* 60px at desktop spec */
+    padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-xl);
+    max-width: none;
+    width: 100%;
+  }
+
+  .attraction-block {
+    border-left-width: var(--space-xl); /* 60px */
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    padding-left: calc(var(--space-xl) + var(--space-md));
+    padding-right: var(--space-xl);
+  }
+
+  .attraction-title { font-size: 3.75rem; } /* ~60px */
+  .bg-credit {
+    right: 10px;     
+    bottom: 10px;
+    font-size: 8px;  
+  }
+  .summary-text {
+    font-size: 2.5rem; /* ~40px */
+    max-width: 40ch;
+  }
+
+  .summary {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .site-footer {
+    padding: var(--space-xl);
+    font-size: 20px;
+  }
+}
