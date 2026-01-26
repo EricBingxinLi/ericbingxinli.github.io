@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research | Eric Li</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== Header / Navigation ===== -->
+<header class="site-header">
+  <a class="logo" href="index.html">Eric<span>Li</span></a>
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="robotics.html">Robotics</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="Community.html">Community</a></li>
+      <li><a href="athletics.html">Athletics</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== Main ===== -->
+<main class="section">
+  <div class="container">
+    <header class="section__header">
+      <h2>Research</h2>
+      <p class="section__lead">
+        My research interests focus on artificial intelligence, robotics,
+        and data-driven decision-making.
+      </p>
+    </header>
+
+    <div class="grid">
+      <!-- Paper Card -->
+      
+<article class="card">
+  <div class="card__body">
+    <h3 class="card__title">
+      AI Strategies for Public Health Intervention
+    </h3>
+
+    <p class="citation">
+      Li, E. (2025). <em>AI Strategies for Public Health Intervention</em>.
+      European Journal of Public Health and Epidemiology Research.
+    </p>
+
+    <p>
+      This paper proposes AI-driven strategies for precision public health
+      by integrating multi-modal data for outbreak forecasting and risk
+      stratification.
+    </p>
+
+    <div class="tags">
+      <span>AI</span><span>Public Health</span><span>Data Science</span>
+    </div>
+
+    <div class="card__actions">
+      <a class="btn btn--small" href="AI-Driven Strategies for Precision Public Health Interventions.pdf" target="_blank">PDF</a>
+      <a class="btn btn--small btn--ghost"
+         href="https://pinnaclepubs.com/index.php/EJPHER/article/view/432"
+         target="_blank">
+        Journal
+      </a>
+    </div>
+  </div>
+</article>
+
+      <!-- Ongoing Research -->
+      <article class="card">
+        <div class="card__body">
+          <h3 class="card__title">Autonomous Robotics Navigation</h3>
+          <p>
+            Exploring classical path-planning algorithms combined with
+            machine learning for autonomous navigation.
+          </p>
+
+          <div class="tags">
+            <span>Robotics</span><span>ROS</span><span>ML</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> Eric Li. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
