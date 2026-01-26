@@ -10,94 +10,370 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Styles (same as index) -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-<!-- ===== Header / Navigation ===== -->
-<header class="site-header">
-  <a class="logo" href="index.html">Eric<span>Li</span></a>
+<body id="top">
+  <!-- ====== Header / Navigation (same as index) ====== -->
+  <header class="site-header" role="banner">
+    <a class="logo" href="index.html" aria-label="Eric Li Home">Eric<span>Li</span></a>
 
-  <nav class="site-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="robotics.html" class="active">Robotics</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="Community.html">Community</a></li>
-      <li><a href="athletics.html">Athletics</a></li>
-    </ul>
-  </nav>
-</header>
+    <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
 
-<!-- ===== Main ===== -->
-<main class="section">
-  <div class="container">
-    <header class="section__header">
-      <h2>Robotics</h2>
-      <p class="section__lead">
-        Competition experience and personal robotics projects.
-      </p>
-    </header>
+    <nav id="siteNav" class="site-nav" role="navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="robotics.html" aria-current="page">Robotics</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="Community.html">Community</a></li>
+        <li><a href="Hobby.html">Hobby</a></li>
+        <li><a href="index.html#contact" class="btn btn--small">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="grid">
-      <!-- Competition Video -->
-      <article class="card">
-        <figure class="card__media">
-          <iframe width="100%" height="220"
-            src="https://www.youtube.com/embed/VIDEO_ID"
-            title="Robotics Competition"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </figure>
-        <div class="card__body">
-          <h3 class="card__title">Robotics Competition</h3>
-          <p>
-            FTC / VEX competition robot featuring autonomous navigation
-            and tele-op control.
-          </p>
-
-          <div class="tags">
-            <span>FTC</span><span>VEX</span><span>Teamwork</span>
-          </div>
+  <!-- ====== Hero (page hero) ====== -->
+  <main class="hero hero--page hero--robotics" role="main">
+    <div class="hero__inner container">
+      <div class="hero__content">
+        <h1 class="hero__title">Robotics — <span>FTC / VEX</span></h1>
+        <p class="hero__subtitle">
+          Competition experience, iterative engineering, and teamwork under pressure —
+          from prototyping and wiring to driver practice and match strategy.
+        </p>
+        <div class="hero__cta">
+          <a href="#highlights" class="btn">Highlights</a>
+          <a href="#gallery" class="btn btn--ghost">Gallery</a>
+          <a href="#video" class="btn btn--ghost">Video</a>
         </div>
-      </article>
+      </div>
 
-      <!-- Personal Project -->
-      <article class="card">
-        <figure class="card__media">
-          <img src="images/Robot.jpg" alt="Robot project">
-        </figure>
-        <div class="card__body">
-          <h3 class="card__title">Autonomous Robot</h3>
-          <p>
-            Built and programmed an autonomous robot using sensors
-            and path-planning algorithms.
-          </p>
-
-          <div class="tags">
-            <span>Python</span><span>ROS</span><span>OpenCV</span>
-          </div>
-
-          <div class="card__actions">
-            <a class="btn btn--small btn--ghost" href="#">Code</a>
-          </div>
-        </div>
-      </article>
+      <div class="hero__media">
+        <!-- Pick one “cover” image -->
+        <img src="images/Robot.jpg" alt="VEX field during a match" />
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<footer class="site-footer">
-  <div class="container footer__inner">
-    <p>© <span id="year"></span> Eric Li. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- ====== Highlights ====== -->
+  <section id="highlights" class="section section--light">
+    <div class="container">
+      <header class="section__header">
+        <h2>Highlights</h2>
+        <p class="section__lead">
+          A quick overview of what I do in robotics: build, iterate, test, and compete.
+        </p>
+      </header>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+      <div class="grid">
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Build & Integration</h3>
+            <p>
+              Mechanical assembly, wiring, and reliability improvements (fast iterations + quick fixes on-site).
+            </p>
+            <div class="tags">
+              <span>Mechanical</span><span>Wiring</span><span>Iteration</span>
+            </div>
+          </div>
+        </article>
 
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Teamwork & Mentorship</h3>
+            <p>
+              Collaborating in the pit and during practice; helping teammates debug and refine designs.
+            </p>
+            <div class="tags">
+              <span>Teamwork</span><span>Debugging</span><span>Leadership</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Competition Environment</h3>
+            <p>
+              Strategy, consistency, and execution under time pressure — learning from every match.
+            </p>
+            <div class="tags">
+              <span>FTC</span><span>VEX</span><span>Strategy</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+   <div class="container">
+     <header class="section__header">
+       <h2>Gallery</h2>
+       <p class="section__lead">Click a card to flip. Click the image icon to view larger.</p>
+     </header>
+ 
+     <div class="grid grid--gallery">
+       <!-- Card 1 -->
+       <article class="flip-card" data-img="images/robotics/club-display.webp">
+         <div class="flip-card__inner">
+           <div class="flip-card__front">
+             <img src="images/robotics/club-display.webp" alt="Robotics club display with robot and awards">
+             <div class="flip-card__frontbar">
+               <h3>Club Showcase</h3>
+               <button class="flip-card__zoom" type="button" aria-label="Open image in lightbox">⤢</button>
+             </div>
+           </div>
+           <div class="flip-card__back">
+             <h3>Club Showcase</h3>
+             <p>
+               A snapshot of our club presentation setup: poster board, robot, and awards.
+               This was used to communicate design choices, build process, and competition outcomes.
+             </p>
+             <ul class="flip-card__list">
+               <li>Focus: communication + project framing</li>
+               <li>Skills: iteration, presentation, documentation</li>
+             </ul>
+           </div>
+         </div>
+       </article>
+ 
+       <!-- Card 2 -->
+       <article class="flip-card" data-img="images/robotics/team-table.webp">
+         <div class="flip-card__inner">
+           <div class="flip-card__front">
+             <img src="images/robotics/team-table.webp" alt="Team working together on a robot at a table">
+             <div class="flip-card__frontbar">
+               <h3>Pit / Debugging</h3>
+               <button class="flip-card__zoom" type="button" aria-label="Open image in lightbox">⤢</button>
+             </div>
+           </div>
+           <div class="flip-card__back">
+             <h3>Pit / Debugging</h3>
+             <p>
+               Collaborative debugging during build/competition days—checking mechanical alignment,
+               wiring reliability, and quick fixes under time pressure.
+             </p>
+             <ul class="flip-card__list">
+               <li>Focus: troubleshooting + teamwork</li>
+               <li>Skills: fast iteration, clear communication</li>
+             </ul>
+           </div>
+         </div>
+       </article>
+ 
+       <!-- Card 3 -->
+       <article class="flip-card" data-img="images/robotics/robot-top.wepg">
+         <div class="flip-card__inner">
+           <div class="flip-card__front">
+             <img src="images/robotics/robot-top.webp" alt="Top view of robot chassis and wiring">
+             <div class="flip-card__frontbar">
+               <h3>Chassis Layout</h3>
+               <button class="flip-card__zoom" type="button" aria-label="Open image in lightbox">⤢</button>
+             </div>
+           </div>
+           <div class="flip-card__back">
+             <h3>Chassis Layout</h3>
+             <p>
+               Top-down view of the drive base and electronics placement. The goal was clean routing
+               and easy access for maintenance and inspections.
+             </p>
+             <ul class="flip-card__list">
+               <li>Focus: reliability + serviceability</li>
+               <li>Skills: wiring management, integration</li>
+             </ul>
+           </div>
+         </div>
+       </article>
+ 
+       <!-- Card 4 -->
+       <article class="flip-card" data-img="images/robotics/robot-side.webp">
+         <div class="flip-card__inner">
+           <div class="flip-card__front">
+             <img src="images/robotics/robot-side.webp" alt="Side view of robot with arm mechanism">
+             <div class="flip-card__frontbar">
+               <h3>Arm Prototype</h3>
+               <button class="flip-card__zoom" type="button" aria-label="Open image in lightbox">⤢</button>
+             </div>
+           </div>
+           <div class="flip-card__back">
+             <h3>Arm Prototype</h3>
+             <p>
+               Mechanism iteration focused on reach, stability, and repeatable motion.
+               We tested geometry and mounting points to reduce flex and improve control.
+             </p>
+             <ul class="flip-card__list">
+               <li>Focus: mechanism design + testing</li>
+               <li>Skills: iteration, tradeoff analysis</li>
+             </ul>
+           </div>
+         </div>
+       </article>
+ 
+       <!-- Card 5 -->
+       <article class="flip-card" data-img="images/robotics/field-wide.webp">
+         <div class="flip-card__inner">
+           <div class="flip-card__front">
+             <img src="images/robotics/field-wide.webp" alt="Competition field with robots and game elements">
+             <div class="flip-card__frontbar">
+               <h3>Match Environment</h3>
+               <button class="flip-card__zoom" type="button" aria-label="Open image in lightbox">⤢</button>
+             </div>
+           </div>
+           <div class="flip-card__back">
+             <h3>Match Environment</h3>
+             <p>
+               Field overview with game elements and multiple robots. Match-day execution depends on
+               consistent driving, quick adjustments, and clear strategy.
+             </p>
+             <ul class="flip-card__list">
+               <li>Focus: strategy + execution</li>
+               <li>Skills: planning, adaptation</li>
+             </ul>
+           </div>
+         </div>
+       </article>
+ 
+       <!-- Card 6 -->
+       <article class="flip-card" data-img="images/robotics/field-close.webp">
+         <div class="flip-card__inner">
+           <div class="flip-card__front">
+             <img src="images/robotics/field-close.webp" alt="Robot being placed on the field before a match">
+             <div class="flip-card__frontbar">
+               <h3>Pre-match Setup</h3>
+               <button class="flip-card__zoom" type="button" aria-label="Open image in lightbox">⤢</button>
+             </div>
+           </div>
+           <div class="flip-card__back">
+             <h3>Pre-match Setup</h3>
+             <p>
+               Pre-match checks: alignment, battery, connections, and quick driver brief.
+               Small details here prevent big failures later.
+             </p>
+             <ul class="flip-card__list">
+               <li>Focus: reliability checklist</li>
+               <li>Skills: attention to detail</li>
+             </ul>
+           </div>
+         </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+	  <!-- Lightbox (place once on the page, e.g. after gallery section) -->
+  	  <div class="lightbox" id="lightbox" aria-hidden="true">
+  	    <div class="lightbox__backdrop" data-close="true"></div>
+	    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Image viewer">
+		  <button class="lightbox__close" type="button" aria-label="Close">×</button>
+		  <img class="lightbox__img" alt="">
+	    </div>
+	  </div>
+
+ <!-- ====== Video ====== -->
+  <section id="video" class="section section--light">
+    <div class="container">
+      <header class="section__header">
+        <h2>Competition Video</h2>
+        <p class="section__lead">
+          Competiton footage of British Columbia Vex V5 Tournament.
+        </p>
+      </header>
+
+		<div class="video">
+		  <iframe
+			src="https://www.youtube-nocookie.com/embed/pZVAb9bvBPo"
+			title="Robotics Competition Video"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen>
+		  </iframe>
+		</div>
+    </div>
+  </section>
+  
+
+  <!-- ====== Footer (same as index) ====== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Eric Li. All rights reserved.</p>
+      <a class="back-to-top" href="#top" aria-label="Back to top">↑ Back to top</a>
+    </div>
+  </footer>
+
+  <!-- ====== Scripts (same as index) ====== -->
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const nav    = document.getElementById('siteNav');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+	
+	 // ----- Flip cards -----
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // If user clicked zoom button, don't flip (handled below)
+      if (e.target.closest('.flip-card__zoom')) return;
+      card.classList.toggle('is-flipped');
+    });
+  });
+
+  // ----- Lightbox -----
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('.lightbox__img');
+  const closeBtn = lightbox.querySelector('.lightbox__close');
+
+  function openLightbox(src, alt){
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.flip-card__zoom').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = e.target.closest('.flip-card');
+      const src = card.getAttribute('data-img');
+      const img = card.querySelector('img');
+      openLightbox(src, img ? img.alt : '');
+    });
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target.dataset.close === 'true') closeLightbox();
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+      closeLightbox();
+    }
+  });
+  </script>
+  
+  
 </body>
 </html>

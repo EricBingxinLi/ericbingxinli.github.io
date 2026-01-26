@@ -136,11 +136,10 @@ h3{
 
 .card__media img{
   width: 100%;  
-  height: 200px;       
-  /* max-width: 300px; */
-  /* max-height: 200px;    */
-  object-fit: cover;
-  object-position: left;
+  height: 100%;       
+  max-width: 300px;
+  max-height: 200px;   
+  object-fit: contain;
   display:block;
 }
 
@@ -200,4 +199,203 @@ input:focus, textarea:focus{ outline: 2px solid #c7d2fe; border-color:#c7d2fe; }
   .site-nav{ position: absolute; inset: 60px 0 auto 0; background:#fff; border-bottom:1px solid var(--line); display:none; }
   .site-nav.open{ display:block; }
   .site-nav ul{ flex-direction: column; padding: 12px 4vw 16px; }
+}
+
+/* ===== Robotics page: gallery + video (append to end of styles.css) ===== */
+.hero--page { min-height: auto; }
+
+.grid--gallery{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card--media{
+  position: relative;
+}
+
+.card--media .card__media{
+  padding: 14px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card--media .card__media img{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  display:block;
+}
+
+.card__caption{
+  padding: 0 16px 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.video{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: 0 8px 28px rgba(17,24,39,.06);
+}
+
+.video iframe{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  display:block;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .grid--gallery{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .grid--gallery{ grid-template-columns: 1fr; }
+  .card--media .card__media img{ height: 220px; }
+}
+/* ===== Flip Cards (Gallery) ===== */
+.grid--gallery{ grid-template-columns: repeat(3, 1fr); }
+
+.flip-card{
+  background: transparent;
+  border-radius: var(--radius);
+  perspective: 1100px;
+  cursor: pointer;
+}
+
+.flip-card__inner{
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  transform-style: preserve-3d;
+  transition: transform .5s ease;
+  border-radius: var(--radius);
+}
+
+.flip-card.is-flipped .flip-card__inner{
+  transform: rotateY(180deg);
+}
+
+.flip-card__front,
+.flip-card__back{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+
+.flip-card__front img{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display:block;
+}
+
+.flip-card__frontbar{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  gap: 10px;
+}
+
+.flip-card__frontbar h3{
+  margin: 0;
+  font-size: 1rem;
+}
+
+.flip-card__zoom{
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: .35rem .55rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.flip-card__zoom:hover{
+  background: var(--brand-50);
+}
+
+.flip-card__back{
+  transform: rotateY(180deg);
+  padding: 16px;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flip-card__back h3{ margin: 0; }
+.flip-card__back p{ margin: 0; color: var(--muted); }
+
+.flip-card__list{
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+.flip-card__list li{ margin: .25rem 0; }
+
+/* Responsive gallery */
+@media (max-width: 980px){
+  .grid--gallery{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .grid--gallery{ grid-template-columns: 1fr; }
+}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.lightbox.is-open{ display: block; }
+
+.lightbox__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.65);
+}
+
+.lightbox__panel{
+  position: relative;
+  width: min(980px, 92vw);
+  max-height: 88vh;       
+  margin: 6vh auto 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+
+  display: flex;             
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox__close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox__img{
+  width: 100%;
+  height: auto;
+  display:block;
 }
