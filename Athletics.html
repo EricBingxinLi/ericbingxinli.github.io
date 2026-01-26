@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hobby | Eric Li</title>
+
+  <!-- Fonts (same as index) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Use the SAME stylesheet as index -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ====== Header / Navigation (same as index) ====== -->
+  <header class="site-header" role="banner">
+    <a class="logo" href="index.html" aria-label="Eric Li Home">Eric<span>Li</span></a>
+
+    <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <nav id="siteNav" class="site-nav" role="navigation" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Robotics.html">Robotics</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="Community.html">Community</a></li>
+        <li><a href="Athletics.html">Athletics</a></li>
+        <li><a href="index.html#contact" class="btn btn--small">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== Hero (page hero) ====== -->
+  <main class="hero hero--page" role="main">
+    <div class="hero__inner container">
+      <div class="hero__content">
+        <h1 class="hero__title">Athletics — <span>Competitive Swimming</span></h1>
+        <p class="hero__subtitle">
+          Swimming has been a long-term commitment alongside my academic and engineering pursuits.
+          It has shaped my discipline, resilience, and ability to perform under pressure.
+        </p>
+        <div class="hero__cta">
+          <a href="#highlights" class="btn">Highlights</a>
+          <a href="#gallery" class="btn btn--ghost">Gallery</a>
+          <a href="#footage" class="btn btn--ghost">Race Footage</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <img src="images/swim2.jpg" alt="Eric at a swimming competition" />
+      </div>
+    </div>
+  </main>
+
+  <!-- ====== Highlights ====== -->
+  <section id="highlights" class="section section--light">
+    <div class="container">
+      <header class="section__header">
+        <h2>Competitive Highlights</h2>
+        <p class="section__lead">
+          A snapshot of training, competition experience, and results.
+        </p>
+      </header>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Viking Swim Club & School Team</h3>
+            <p>
+              Provincial Championships Qualifier<br>
+              🥇 2 Relay Gold Medals<br>
+              🥉 2 Bronze Medals
+            </p>
+            <div class="tags">
+              <span>Competition</span><span>Relay</span><span>Teamwork</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Training & Discipline</h3>
+            <p>
+              Year-round competitive training while balancing advanced coursework,
+              research, and robotics leadership.
+            </p>
+            <div class="tags">
+              <span>Consistency</span><span>Time Management</span><span>Resilience</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__body">
+            <h3 class="card__title">Performance Under Pressure</h3>
+            <p>
+              Race-day focus, pacing strategy, and executing technique when it matters.
+            </p>
+            <div class="tags">
+              <span>Mental Toughness</span><span>Strategy</span><span>Execution</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Gallery ====== -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <header class="section__header">
+        <h2>Competition Gallery</h2>
+        <p class="section__lead">Moments from meets and competitions.</p>
+      </header>
+
+      <div class="grid grid--gallery">
+        <figure class="card card--media">
+          <div class="card__media">
+            <img src="images/swim2.jpg" alt="Swimming competition photo 2" />
+          </div>
+        </figure>
+
+        <figure class="card card--media">
+          <div class="card__media">
+            <img src="images/swim3.jpg" alt="Swimming competition photo 3" />
+          </div>
+        </figure>
+
+        <!-- Optional: add more images later -->
+        <!--
+        <figure class="card card--media">
+          <div class="card__media">
+            <img src="images/swim4.jpg" alt="Swimming competition photo 4" />
+          </div>
+        </figure>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footage ====== -->
+  <section id="footage" class="section section--light">
+    <div class="container">
+      <header class="section__header">
+        <h2>Race Footage</h2>
+        <p class="section__lead">Selected race footage from competitions.</p>
+      </header>
+
+      <div class="video">
+        <!-- IMPORTANT: use the EMBED format, not youtu.be -->
+        <iframe
+          src="https://www.youtube.com/embed/E1Ys9ewWATY"
+          title="Swimming Competition Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Footer (same as index) ====== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Eric Li. All rights reserved.</p>
+      <a class="back-to-top" href="#top" aria-label="Back to top">↑ Back to top</a>
+    </div>
+  </footer>
+
+  <!-- ====== Scripts (same as index) ====== -->
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const nav    = document.getElementById('siteNav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+
+    // Close nav when clicking a link (mobile)
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
