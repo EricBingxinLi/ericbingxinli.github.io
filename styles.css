@@ -105,6 +105,12 @@ body{
   display:block; margin-left: auto;
 }
 
+.hero__media2 img{
+  width: 260px; aspect-ratio: 1/1; object-fit: fill; border-radius: 50%;
+  border: 6px solid rgba(255,255,255,.75); box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  display:block; margin-left: auto;
+}
+
 /* ========= About ========= */
 .split{
   display:grid; gap: var(--gap);
